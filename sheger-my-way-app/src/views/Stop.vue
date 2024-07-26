@@ -7,10 +7,10 @@
         </div>
         <div class="content">
             <div class="map-container">
-                <img
+                <!-- <img
                     src="../assets/citymap.svg"
                     alt="city map"
-                />
+                /> -->
             </div>
             <div class="input-container location">
                 <input

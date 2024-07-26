@@ -70,9 +70,9 @@
     align-items: center;
     gap: 19px;
     padding: 0 36px;
-    margin-top: -5px;
-    padding-bottom: 36px;
-    max-height: 100%;
+    padding-bottom: 0;
+    height: 100%;
+    margin-top: 5px;
     
 
 }
@@ -83,27 +83,34 @@
     justify-content: center;
     border-radius: 14px;
     align-items: center;
-    width: 111%;
-    margin-bottom: -4px;
+    width: 100%;
+    flex: 1;
+    background-image: url(./assets/citymap2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
 
-    img {
-        width: 100%;
-        height: auto;
-    }
 }
 
 
 .input-container {
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
   /* height: 49px; */
+  flex: 0.18;
 }
 
 .input {
     outline: none;
     border: none;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
-    height: 49px;
+    /* height: 49px; */
+    height: 100%;
     border-radius: 28px;
     padding: 7px 16px;
     width: 100%;
@@ -125,7 +132,7 @@
 }
 
 .location {
-    margin-top: -17px;
+
 }
 
 
@@ -140,6 +147,7 @@
   border-radius: 16px;
   max-height: 100%;
   overflow:scroll;
+  flex: 1;
 }
 
 .buses-text {
