@@ -84,16 +84,12 @@
             </div>
 
             <div class="route-list-container">
-                <div
-                    class="route-list"
-                    v-for="(line, index) in routeListCreator(bus.route).order"
-                >
+                <div class="route-list">
                     <div
-                        class="normal"
-                        v-if="line.type === 'normal'"
-                        v-for="(location, index) in line.data"
+                        v-for="(line, index) in routeListCreator(bus.route).order"
+                        :class="{ normal: line.type === 'normal', curved: line.type === 'curved', normalEnding: line.type === 'normalEnding', curvedEnding: 'curvedEnding'}"
                     >
-                        <div class="">{{ location }}</div>
+                        <div v-if="line.type === 'normal' " class="">{{ location }}</div>
                         <svg
                             width="20"
                             height="20"
@@ -182,6 +178,66 @@
                             xmlns="http://www.w3.org/2000/svg"
                             class="leftCurved"
                             v-if="index === 1"
+                        >
+                            <path
+                                d="M7.50016 8.33337L3.3335 12.5L7.50016 16.6667"
+                                stroke="#416084"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M16.6668 3.33337V9.16671C16.6668 10.0508 16.3156 10.8986 15.6905 11.5237C15.0654 12.1489 14.2176 12.5 13.3335 12.5H3.3335"
+                                stroke="#416084"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                        class="normalEnding"
+                        v-if="line.type === 'normalEnding'"
+                        v-for="(location, index) in line.data"
+                    >
+                        <div class="">{{ location }}</div>
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            v-if="index !== line.data.length - 1"
+                        >
+                            <path
+                                d="M15 6.66663L18.3333 9.99996L15 13.3333"
+                                stroke="#416084"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M1.66675 10H18.3334"
+                                stroke="#416084"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
+                    </div>
+                    <div
+                        class="curvedEnding"
+                        v-if="line.type === 'curvedEnding'"
+                        v-for="(location, index) in line.data"
+                    >
+                        <div class="">{{ location }}</div>
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="leftCurved"
                         >
                             <path
                                 d="M7.50016 8.33337L3.3335 12.5L7.50016 16.6667"
@@ -366,6 +422,33 @@
                         </svg>
 
                         <div class="Mexico">Mexico</div>
+                    </div>
+
+                    <div class="curvedEnding">
+                        <div class="">Friendship</div>
+                        <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="leftCurved"
+                        >
+                            <path
+                                d="M7.50016 8.33337L3.3335 12.5L7.50016 16.6667"
+                                stroke="#416084"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                            <path
+                                d="M16.6668 3.33337V9.16671C16.6668 10.0508 16.3156 10.8986 15.6905 11.5237C15.0654 12.1489 14.2176 12.5 13.3335 12.5H3.3335"
+                                stroke="#416084"
+                                stroke-width="1.25"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            />
+                        </svg>
                     </div>
                 </div>
             </div>

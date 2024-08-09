@@ -566,11 +566,15 @@
   justify-content: space-between;
 }
 
-.route-list > div:last-child {
+.route-list .normalEnding {
   justify-content: start;
   gap: 7dvw;
 }
 
+.route-list .curvedEnding {
+  justify-content: end;
+  gap: 7dvw;
+}
 
 .bottomCurved {
   margin-left: 10px;
