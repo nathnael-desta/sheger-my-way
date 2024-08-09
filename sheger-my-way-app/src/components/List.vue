@@ -10,7 +10,7 @@
                 v-if="currentPageNo == 0"
             />
              <Buses 
-                v-if="currentPageNo == 1 || currentPageNo == 2"
+                v-if="currentPageNo == 1 || currentPageNo == 2 || currentPageNo == 3"
             />
             <BusesToDestination />
         </div>

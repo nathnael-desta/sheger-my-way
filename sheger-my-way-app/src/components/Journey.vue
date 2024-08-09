@@ -1,9 +1,13 @@
 <template>
-  <div class="journey-container">
-    <div class="journey-from">{{ busStop }}</div>
-    <img class="journey-svg" src="../assets/leftright.svg" alt="">
-    <div class="journey-to">{{ destination }}</div>
-  </div>
+    <div class="journey-container">
+        <div class="journey-from">{{ busStop }}</div>
+        <img
+            class="journey-svg"
+            src="../assets/leftright.svg"
+            alt=""
+        />
+        <div class="journey-to">{{ destination }}</div>
+    </div>
 </template>
 
 <script setup>

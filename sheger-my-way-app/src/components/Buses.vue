@@ -279,27 +279,41 @@
             <div
                 class="cancel"
                 @click="subBus.active = false"
+                v-if="!tracking"
             >
                 Cancel
             </div>
-            <div class="track">Track</div>
+            <div 
+                class="track"
+                v-if="!tracking"
+                @click="startTracking(bus.plate)"
+            >Track</div>
+            <div 
+                class="stopTracking"
+                v-if="tracking"
+                @click="stopTracking()"
+                >Stop Tracking</div>
         </div>
     </div>
 </template>
 
 <script setup>
-import { inject, computed, reactive } from "vue";
+import { inject, computed, reactive, ref } from "vue";
 import { routeListCreator } from "@/utils/routeUtils";
 
 const $routeData = inject("$routeData");
 const pageNo = inject("pageNo");
 const busStop = inject("busStop");
 const destination = inject("destination");
+let busPlate = inject("busPlate");
+let tracking = inject("tracking");
 
 const subBus = reactive({
     active: false,
     index: NaN,
 });
+
+
 
 // Ensure the computed property reacts to changes
 const busesToLocation = computed(() => {
@@ -308,7 +322,7 @@ const busesToLocation = computed(() => {
         result = [...$routeData.getAllBuses()].filter(
             (bus) => bus.stop === busStop.value
         );
-    } else if (pageNo.value === 2) {
+    } else if (pageNo.value === 2 || pageNo.value === 3) {
         result = [...$routeData.getAllBuses()].filter(
             (bus) =>
                 bus.stop === busStop.value && bus.next === destination.value
@@ -327,10 +341,18 @@ function goToDestination(bus, index) {
             subBus.active = true;
             subBus.index = index;
         }
-        // else {
-        //     subBus.active = false;
-        //     subBus.index = NaN;
-        // }
     }
+}
+
+function startTracking(plate) {
+    tracking.value = true;
+    busPlate.plate = true;
+    busPlate.plateNo = plate;
+
+}
+
+function stopTracking() {
+    busPlate.plate = false;
+    tracking.value = false;
 }
 </script>
