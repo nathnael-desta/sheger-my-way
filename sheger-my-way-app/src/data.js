@@ -9,7 +9,7 @@ const buses = [
     },
     "plate": "A23456",
     "diabilityFriendly": false,
-    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico", "Mexico", "Mexico", "Mexico", "Mexico"],
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
     "nextRoute": "amistKilo-mexico"
   },
   {
