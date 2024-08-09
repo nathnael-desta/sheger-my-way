@@ -18,6 +18,36 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: myMedium;
+  src: url("./assets/fonts/Quasimoda\ Medium.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: mySemiBold;
+  src: url("./assets/fonts/Quasimoda\ SemiBold.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: sfBold;
+  src: url("./assets/sf/SF-Pro-Display-Bold.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: sfMedium;
+  src: url("./assets/sf/SF-Pro-Display-Medium.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: sfSemiBold;
+  src: url("./assets/sf/SF-Pro-Display-Semibold.otf") format("opentype");
+  font-style: normal;
+}
+
 
 
 
@@ -25,7 +55,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: calc(100dvh * 0.275);
+    height: calc(100dvh * 0.225);
     width: 100dvw;
     background: linear-gradient(
         180deg,
@@ -57,6 +87,13 @@
     text-align: center;
 }
 
+.arrow {
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  cursor: pointer;
+}
+
 .stepIndicator {
   position: absolute;
   bottom: -10px;
@@ -69,7 +106,7 @@
     flex-direction: column;
     align-items: center;
     gap: 19px;
-    padding: 0 36px;
+    padding: 0 50px;
     padding-bottom: 0;
     height: 100%;
     margin-top: 5px;
@@ -101,15 +138,15 @@
   flex-direction: column;
   justify-content: center;
   
-  /* height: 49px; */
-  flex: 0.18;
+  height: 49px;
+  /* flex: 0.18; */
 }
 
 .input {
     outline: none;
     border: none;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
-    /* height: 49px; */
+    height: 49px;
     height: 100%;
     border-radius: 28px;
     padding: 7px 16px;
@@ -136,10 +173,10 @@
 }
 
 
-.buses {
+.list {
   display: flex;
   flex-direction: column;
-  padding: 7px 14px 14px 14px;
+  padding: 14px 14px 14px 14px;
   gap: 20px;
   width: 100%;
   justify-content: start;
@@ -148,16 +185,21 @@
   max-height: 100%;
   overflow:scroll;
   flex: 1;
+  background-color: white;
+  position: relative;
+  z-index: 5;
+  
 }
 
-.buses-text {
+.list-text {
   font-family: myBold;
   font-size: 17px;
   line-height: 22px;
   color: rgba(2, 156, 254, 1);
+  margin-bottom: -8px;
 }
 
-.busStands-container {
+.list-container {
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -167,12 +209,19 @@
 .busStand {
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  height: 63px;
+  /* height: 63px; */
   position: relative;
-  overflow: hidden;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* overflow: hidden; */
+}
+
+.basic-info {
   display: flex;
   justify-content: space-between;
-
+  gap: 5px;
 }
 
 .left {
@@ -227,6 +276,17 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
+}
+
+.red {
+  background-color: rgba(222, 67, 67, 1);
+}
+
+.yellow {
+  background-color: rgba(222, 179, 67, 1);
+}
+
+.green {
   background-color: rgba(89, 222, 67, 1);
 }
 
@@ -274,4 +334,281 @@
   line-height: 22px;
   color: rgba(35, 105, 188, 1);
   padding-bottom: 3px;
+  z-index: 0;
+}
+
+.rectLeft {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 45px;
+  height: 28px;
+  transform: scaleY(1.2);
+  z-index: 0;
+}
+
+.busImg {
+  position: absolute;
+  top: 5px;
+  left: 6px;
+  width: 28px;
+  height: 28px;
+  z-index: 0;
+}
+
+
+
+.rectRight {
+  position: absolute;
+  top: 12px;
+  left: 41px;
+  width: 80px;
+  right: 18px;
+  transform: scale(1.1, 1.2);
+}
+
+.next {
+  color: rgba(7, 120, 255, 1) !important;
+  padding-top: 8px !important;
+}
+
+.from {
+  font-family: myBold;
+  font-size: 8px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.fromImg {
+  width: 12px;
+  height: 12px;
+}
+
+.coming {
+  font-family: myBold;
+  font-size: 8px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.busRight {
+  display: flex;
+  flex-direction: row;
+  padding-right: 12px !important;
+}
+
+.arrival-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.arrives {
+  font-family: myBold;
+  font-size: 8px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.arrival-div {
+  display: flex;
+  gap: 5px;
+}
+
+.hour-number {
+  font-family: myBold;
+  font-size: 44px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.hour-text {
+  font-family: myBold;
+  font-size: 13px;
+  line-height: 22px;
+  color: rgba(35, 105, 188, 1);
+  padding-top: 10px;
+}
+
+.min-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.travel {
+  font-family: myBold;
+  font-size: 8px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.travel-div {
+  display: flex;
+  gap: 5px;
+  height: 100%;
+}
+
+.travel-number {
+  font-family: myBold;
+  font-size: 44px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.travel-text {
+  font-family: myBold;
+  font-size: 13px;
+  line-height: 22px;
+  color: rgba(35, 105, 188, 1);
+  padding-top: 10px;
+}
+
+.journey-container {
+  display: flex;
+  justify-content: space-between;
+  font-family: myBold;
+  font-size: 17px;
+  line-height: 22px;
+  position: relative;
+  z-index: 5;
+  color: white;
+  width: 80%;
+
+}
+
+.plate {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
+  margin: 0 10px;
+  border-radius: 9px;
+  align-items: center;
+
+}
+
+.plate-left {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: sfBold;
+  font-size: 17px;
+  line-height: 22px;
+  color: rgba(2, 156, 254, 1);
+}
+
+.route {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.route-title {
+  display: flex;
+  gap: 5px;
+  font-family: sfSemiBold, sans-serif;
+  font-size: 17px;
+  line-height: 22px;
+  color: rgba(35, 105, 188, 1);
+  /* box-shadow: 0px -2px 16px 0px rgba(0, 0, 0, 0.22); */
+  position: relative;
+  z-index: 3;
+  border-radius: 0 7px 0px 0;
+  padding: 3px 14px;
+  background-color: white;
+
+}
+
+/* .route-list::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: white;
+} */
+
+.route-list-container {
+  background-color: white;
+  padding: 6px;
+  box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.22);
+  width: 100%;
+  position: relative;
+  z-index: 2;
+
+}
+
+.route-list {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border: solid 2px rgba(0, 0, 0, 0.11);
+  border-radius: 10px;
+  font-family: mySemiBold, sans-serif;
+  font-size: 12px;
+  line-height: 22px;
+  color: rgba(35, 105, 188, 1);
+
+}
+
+.route-list path {
+  stroke-width: 2;
+}
+
+.route-list > div {
+  display: flex;
+  padding: 2px 6px;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.route-list > div:last-child {
+  justify-content: start;
+  gap: 7dvw;
+}
+
+
+.bottomCurved {
+  margin-left: 10px;
+}
+
+.leftCurved {
+  margin-right: 10px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.buttons > div {
+  height: 29px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sfMedium, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 8px 0;
+  width: 100%;
+  box-shadow: 0px 3px 5.3px 0px rgba(0, 0, 0, 0.22);
+  border-radius: 6px;
+}
+
+.cancel {
+  border: 1px solid rgba(2, 156, 254, 1);
+  color: rgba(2, 156, 254, 1);
+
+
+}
+
+.track {
+  background-color: rgba(2, 156, 254, 1);
+  color: white;
 }

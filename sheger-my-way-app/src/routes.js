@@ -1,10 +1,10 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
-import stop from './views/Stop.vue';
+import home from './views/Home.vue';
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
-    { path: '/:index?', component: stop, props: true }
+    { path: '/:index?', component: home, props: true }
   ]
 })
 

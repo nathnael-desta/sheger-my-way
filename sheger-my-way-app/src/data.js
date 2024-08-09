@@ -1,49 +1,10 @@
 const buses = [
   {
-    "stop": "AmistKilo",
-    "from": "Janmeda",
+    "stop": "Amist Kilo",
+    "from": "Sidit Kilo",
     "next": "Stadium",
     "time": {
-      "hr": "8",
-      "min": "24"
-    },
-    "plate": "A12345",
-    "diabilityFriendly": true,
-    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
-    "nextRoute": "amistKilo-mexico"
-  },
-  {
-    "stop": "AmistKilo",
-    "from": "Janmeda",
-    "next": "Jemo II",
-    "time": {
-      "hr": "8",
-      "min": "24"
-    },
-    "plate": "A12345",
-    "diabilityFriendly": true,
-    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
-    "nextRoute": "amistKilo-mexico"
-  },
-  {
-    "stop": "AmistKilo",
-    "from": "Janmeda",
-    "next": "Mexico",
-    "time": {
-      "hr": "8",
-      "min": "24"
-    },
-    "plate": "A12345",
-    "diabilityFriendly": true,
-    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
-    "nextRoute": "amistKilo-mexico"
-  },
-  {
-    "stop": "AmistKilo",
-    "from": "Sidit Kilo",
-    "next": "Mexico",
-    "time": {
-      "hr": "10",
+      "arrival": "10",
       "min": "24"
     },
     "plate": "A23456",
@@ -52,11 +13,24 @@ const buses = [
     "nextRoute": "amistKilo-mexico"
   },
   {
-    "stop": "AmistKilo",
+    "stop": "Amist Kilo",
     "from": "Shiromeda",
+    "next": "Jemo II",
+    "time": {
+      "arrival": "8",
+      "min": "24"
+    },
+    "plate": "A12345",
+    "diabilityFriendly": true,
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
+    "nextRoute": "amistKilo-mexico"
+  },
+  {
+    "stop": "Amist Kilo",
+    "from": "Janmeda",
     "next": "Mexico",
     "time": {
-      "hr": "17",
+      "arrival": "17",
       "min": "23"
     },
     "plate": "A34663",
@@ -65,18 +39,83 @@ const buses = [
     "nextRoute": "amistKilo-mexico"
   },
   {
-    "stop": "AmistKilo",
-    "from": "Megenagna",
+    "stop": "Amist Kilo",
+    "from": "Sidist Kilo",
     "next": "Mexico",
     "time": {
-      "hr": "25",
+      "arrival": "25",
       "min": "22"
     },
     "plate": "A12463",
     "diabilityFriendly": false,
     "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
     "nextRoute": "amistKilo-mexico"
-  }
+  },
+  {
+    "stop": "Sidist Kilo",
+    "from": "Janmeda",
+    "next": "Stadium",
+    "time": {
+      "arrival": "8",
+      "min": "24"
+    },
+    "plate": "A12345",
+    "diabilityFriendly": true,
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
+    "nextRoute": "amistKilo-mexico"
+  },
+  {
+    "stop": "Arat Kilo",
+    "from": "Janmeda",
+    "next": "Jemo II",
+    "time": {
+      "arrival": "8",
+      "min": "24"
+    },
+    "plate": "A12345",
+    "diabilityFriendly": true,
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
+    "nextRoute": "amistKilo-mexico"
+  },
+  {
+    "stop": "Amist Kilo",
+    "from": "Janmeda",
+    "next": "Mexico",
+    "time": {
+      "arrival": "8",
+      "min": "24"
+    },
+    "plate": "A12463",
+    "diabilityFriendly": true,
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
+    "nextRoute": "amistKilo-mexico"
+  },
+  {
+    "stop": "Amist Kilo",
+    "from": "Shiromeda",
+    "next": "Mexico",
+    "time": {
+      "arrival": "17",
+      "min": "23"
+    },
+    "plate": "A12463",
+    "diabilityFriendly": true,
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
+    "nextRoute": "amistKilo-mexico"
+  },
+  {
+    "stop": "Amist Kilo",
+    "from": "Megenagna",
+    "next": "Mexico",
+    "time": {
+      "arrival": "25",
+      "min": "22"
+    },
+    "plate": "A12463",
+    "diabilityFriendly": false,
+    "route": ["Janmeda", "Amist Kilo", "Arat Kilo", "Fil Wuha", "Friendship", "Stadium", "Mexico"],
+    "nextRoute": "amistKilo-mexico"
+  },
 ]
 
 const busStands = [
