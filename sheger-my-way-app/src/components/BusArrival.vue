@@ -11,7 +11,8 @@
         </div>
 
         <div
-            :class="{onlyWidth: hideButtons, busArrivalmapcontainer: !tracking, trackingImg: tracking  }"
+            class="map3"
+            :class="{onlyWidth: hideButtons}"
         ></div>
 
         <div

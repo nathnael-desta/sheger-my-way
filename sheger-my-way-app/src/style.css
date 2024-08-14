@@ -226,7 +226,6 @@
     border-radius: 14px;
     align-items: center;
     width: 100%;
-    height: ;
     
     flex: 1;
     background-image: url(./assets/newmap2.png);
@@ -243,12 +242,13 @@
     border-radius: 14px;
     align-items: center;
     width: 100%;
-    flex: 1;
     background-image: url(./assets/map3.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
+    height: 256px;
+    margin-bottom: 22px;
 }
 
 .input-container {
