@@ -7,6 +7,12 @@
 }
 
 @font-face {
+    font-family: myBoldSplash;
+    src: url("./assets/fonts/static/BigShouldersDisplay-Bold.ttf") format("opentype");
+    font-style: normal;
+}
+
+@font-face {
     font-family: myExtraBold;
     src: url("./assets/fonts/Quasimoda\ ExtraBold.otf") format("opentype");
     font-style: normal;
@@ -54,6 +60,70 @@
     font-style: normal;
 }
 
+.app {
+    position: relative;
+}
+
+.splash {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #029CFE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+}
+
+.hiddenSplash {
+    transform: translateY(-100%);
+    transition: transform 0.6s;
+}
+.visibleSplash {
+    transform: translateY(0);
+    transition: transform 0.6s;
+}
+
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: -140px;
+    gap: 5px;
+}
+
+.splash-img {
+    width: 100%;
+    height: auto;
+}
+
+.splash-title {
+    font-family: myBoldSplash;
+    color: white;
+    font-size: 54px;
+    line-height: 64px;
+}
+
+.swipe {
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.uptext {
+    font-family: myNormal;
+    font-size: 17px;
+    line-height: 22px;
+    color: white;
+}
+
 .blue-background {
     position: fixed;
     top: 0;
@@ -70,19 +140,25 @@
     z-index: 0;
 }
 
+
+
 .bigger {
     height: calc(100dvh * 0.45);
+    
 }
 
 .main {
     padding: 36px 0;
     padding-top: 20px;
+    
     display: flex;
     flex-direction: column;
     gap: 20px;
     height: 100dvh;
     width: 100dvw;
     overflow: hidden;
+    position: relative;
+    z-index: 5;
 }
 
 .scrollable {
@@ -97,6 +173,7 @@
     line-height: 22px;
     color: white;
     text-align: center;
+    z-index: 5;
 }
 
 .arrow {
@@ -119,11 +196,12 @@
     align-items: center;
     gap: 19px;
     padding: 0 50px;
-    padding-bottom: 0;
+    padding-bottom: 15px;
     height: 100%;
     margin-top: 5px;
     position: relative;
     z-index: 5;
+    overflow: hidden;
 }
 
 .map-container {
@@ -135,6 +213,38 @@
     width: 100%;
     flex: 1;
     background-image: url(./assets/citymap2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
+}
+
+.map2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 14px;
+    align-items: center;
+    width: 100%;
+    height: ;
+    
+    flex: 1;
+    background-image: url(./assets/newmap2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
+}
+
+.map3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 14px;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+    background-image: url(./assets/map3.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -198,6 +308,11 @@
     z-index: 5;
 }
 
+.list::-webkit-scrollbar {
+    display: none;
+  }
+
+
 .list-text {
     font-family: myBold;
     font-size: 17px;
@@ -250,6 +365,8 @@
     z-index: 0;
     transform: scaleX(1.2);
 }
+
+
 
 .left .top .name {
     padding-left: 48px;
@@ -458,12 +575,61 @@
     color: rgba(2, 156, 254, 1);
 }
 
+@media (max-width: 425px) {
+    .hour-number { 
+        font-size: 29px;
+    }
+
+    .travel-number { 
+        font-size: 29px;
+    }
+
+    
+}
+
 .travel-text {
     font-family: myBold;
     font-size: 13px;
     line-height: 22px;
     color: rgba(35, 105, 188, 1);
     padding-top: 10px;
+}
+
+
+@media (max-width: 400px) {
+    .rectangle {
+        transform: scalex(0.7);
+        left: 21px;
+    }
+
+    .left .top .name { 
+        font-size: 11px;
+    }
+
+    .number {
+        font-size: 36px;
+    }
+
+    .busStand .right {
+        padding-right: 8px;
+    }
+
+    .rectRight {
+        transform: scaleX(0.8);
+        left: 30px;
+    }
+
+    .busRight {
+        padding-right: 5px !important;
+    }
+
+    .hour-text {
+        font-size: 10px;
+    }
+
+    .travel-text {
+        font-size: 10px;
+    }
 }
 
 .journey-container {
@@ -662,6 +828,10 @@
     padding: 40px 0px;
 }
 
+.lessPadding {
+  padding: 25px 0;
+}
+
 .busArrival-title {
     font-family: myExtraBold, sans-serif;
     font-size: 46px;
@@ -706,18 +876,74 @@
     height: 256px;
 } */
 
-.busArrival-map-container {
+.busArrivalmapcontainer {
     position: relative;
     display: flex;
     justify-content: center;
     border-radius: 14px;
     align-items: center;
     width: 100%;
-    background-image: url(./assets/citymap2.svg);
+    background-image: url(./assets/map3.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
     height: 256px;
     margin-bottom: 22px;
+}
+
+.trackingImg {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 14px;
+    align-items: center;
+    width: 100%;
+    background-image: url(./assets/trackingImg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.22);
+    height: 256px;
+    margin-bottom: 22px;
+}
+
+.fullWidth {
+  width: 78vw;
+  height: 350px;
+}
+
+.onlyWidth {
+    width: 78vw;
+}
+
+.hidden {
+  display: none;
+}
+
+.noUnderPadding {
+  padding: 0 !important;
+}
+
+.rounded {
+  border-bottom-left-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+}
+
+.plan {
+  border-radius: 6px;
+  padding: 7px 34px;
+  background-color: #029cfe;
+  color: white;
+  box-shadow: 0px 3px 5.3px 0px rgba(0, 0, 0, 0.22);
+  text-align: center;
+  width: 78vw;
+  font-family: myMedium;
+  font-size: 20px;
+  line-height: 22px;
+
+}
+
+.lessBottomPadding {
+  padding-bottom: 10px;
 }
