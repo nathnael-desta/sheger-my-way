@@ -1,0 +1,21 @@
+{
+  "name": "sheger-my-way-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "deep-equal": "^2.2.3",
+    "lodash": "^4.17.21",
+    "vue": "^3.2.13",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0"
+  }
+}
